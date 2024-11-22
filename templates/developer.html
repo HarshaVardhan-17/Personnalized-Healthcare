@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>HEALTH CARE CENTRE</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <style>
+         /* Basic reset and styling */
+         body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #0a0a1f; /* Bluish-black background */
+            color: #fff;
+        }
+
+        h1 {
+            text-align: center;
+            padding: 20px 0;
+            color: #ffd700; /* Gold for header */
+        }
+
+        /* Team section styling */
+        .team-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .team-member {
+            background-color: #1a2a3a; /* Deep navy blue for cards */
+            margin: 15px;
+            padding: 20px;
+            border-radius: 8px;
+            width: 250px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .team-member:hover {
+            transform: scale(1.05);
+        }
+
+        .team-member img {
+            border-radius: 50%;
+            width: 120px;
+            height: 120px;
+            object-fit: cover;
+            margin-bottom: 15px;
+        }
+
+        .team-member h3 {
+            margin: 10px 0 5px;
+            color: #ffd700; /* Gold for names */
+        }
+
+        .team-member p {
+            font-size: 14px;
+            color: #cccccc; /* Light gray for descriptions */
+        }
+
+        /* Footer styling */
+        footer {
+          background-color: rgba(30, 30, 30, 0.8);  /* Dark gray with transparency */
+    color: #ffffff;  /* White text */
+    text-align: center;
+    padding: 15px;  /* Adjust padding as needed */
+    position: fixed;
+    bottom: 0;
+    left: 0;  /* Ensures the footer is aligned to the left */
+    width: 100%;  /* Full width */
+    margin: 0;
+        }
+      .logo {
+          width: 50px;
+          height: 50px;
+          color: black;
+          margin-top: 0;
+          margin-left: 2px;
+      }
+
+      .myimg {
+          width: 50px;
+          height: 50px;
+          border: 2px solid black;
+          border-radius: 25px;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
+          <!-- Logo at the top-left corner -->
+          <div class="logo">
+              <img class="myimg" src="{{ url_for('static', filename='img.jpg') }}" alt="">
+          </div>
+
+          <a class="navbar-brand" href="#">Health Center</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                      <a class="nav-link active" aria-current="page" href="#" style="color:#ffcc00" onclick="openHomePage()">Home</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="/about" style="color:#ffcc00">About</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="/contact" style="color:#ffcc00">Contact</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="/developer" style="color:#ffcc00">Developer</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="/blog" style="color:#ffcc00">Blog</a>
+                  </li>
+                 
+              </ul>
+              
+          </div>
+      </div>
+    </nav>
+
+    <div class="container my-4 mt-4">
+  <!-- Page header -->
+  <h1>Meet Our Developer Team</h1>
+
+  <!-- Team member section -->
+  <div class="team-container">
+      <!-- Member 1 -->
+      <div class="team-member">
+          <img src="static/Harsha.jpg" alt="Harsha">
+          <h3>Harsha</h3>
+          <p>Backend Developer specializing in APIs and database management. Enjoys optimizing code and building scalable solutions.</p>
+      </div>
+
+      <!-- Member 2 -->
+      <div class="team-member">
+          <img src="static/Sandhya.jpg" alt="Sandhya">
+          <h3>Sandhya</h3>
+          <p>Frontend Developer with a passion for creating intuitive user interfaces and seamless user experiences.</p>
+      </div>
+
+      <!-- Member 3 -->
+      <div class="team-member">
+          <img src="static/Hasrutha.jpg" alt="Hasrutha">
+          <h3>Hasrutha</h3>
+          <p>Data Scientist with expertise in machine learning and data analysis, transforming data into actionable insights.</p>
+      </div>
+
+      <!-- Member 4 -->
+      <div class="team-member">
+          <img src="static/Pavan.jpg" alt="Pavan">
+          <h3>Pavan</h3>
+          <p>Full Stack Developer with a strong background in both frontend and backend technologies, delivering complete solutions.</p>
+      </div>
+  </div>
+
+  
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <script>
+      function openHomePage() {
+          window.location.href = "http://127.0.0.1:5000/";
+      }
+    </script>
+    <!-- Footer -->
+  <footer>
+    <p>&copy; All rights reserved @ Harsha, Sandhya, Hasrutha, Pavan</p>
+</footer>
+  </body>
+</html>
